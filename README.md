@@ -69,6 +69,6 @@ Como la mayoría de los clientes usa el celular, el sitio está pensado **primer
 
 ## Flujo de trabajo
 
-- `master`: versión publicada en GitHub Pages.
+- `main`: versión publicada en GitHub Pages.
 - `develop`: integración de lo terminado antes de publicarlo.
 - `feature/*`: una rama por cada funcionalidad (por ejemplo, `feature/menu-hamburguesa`).
