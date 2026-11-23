@@ -1,0 +1,221 @@
+.marca {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 8px;
+}
+
+.marca span {
+    font-weight: 700;
+    font-size: 24px;
+    color: #a63b00;
+}
+
+#logo{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+#icono-WhatsApp{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding : 0px 32px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e1bfb3;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navegador ul {
+    display: flex; /* Alinea los elementos en fila */
+    gap: 20px; /* Espacio entre los elementos */
+    flex-direction: row;
+    list-style-type: none; /* Elimina los puntos de la lista */
+    margin: 0; /* Elimina el margen por defecto */
+}
+
+.navegador a {
+    text-decoration:none;
+    color: #5b5f63;
+    margin-right: 10px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.navegador a:hover {
+    color: #a63b00;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.boton {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background: #f26522;
+    border-radius: 8px;
+    padding: 14px 28px;
+    font-weight: 700;
+    margin-right: 12px;
+}
+
+.boton-secundario{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 2px solid white;
+    padding: 12px 26px;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+.boton:hover {
+    background: #a63b00;
+}
+
+/*--BOTON DE CONSULTAR AHORA FLOTANTE FIJO ABAJO A LA DERECHA--*/
+.boton-whatsapp{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 20;
+    background: #026928;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 14px 20px;
+    border-radius: 999px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.boton-whatsapp img {
+    width: 24px;
+    height: 24px;
+}
+
+.boton-whatsapp:hover {
+    background: #1ebe5a;
+}
+
+.hero {
+    background-image:
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url("../assets/Frente ferreteria.jpeg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 150px 32px;
+    margin-top: 24px;
+}
+
+.categorias {
+    padding: 48px 32px
+}
+
+.categorias-grid {
+    display: grid; /*Activa la grilla en el contenedor, igual que usar flex*/
+    grid-template-columns: repeat(4, 1fr); /*Significa 4 columnas cada una con una parte igual del espacio, fr es una fracción: si el ancho es 1000px, cada columna toma 250px (menos los huecos)*/
+    gap: 16px; /*Es el espacio entre tarjetas*/
+}
+
+.categoria{ /*Cada tarjeta*/
+    background: white;
+    border: 1px solid #e1e3e4;
+    border-radius: 12px;
+    padding: 32px 16px;
+    text-align: center;
+    color: #191c1d;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.categoria:hover{
+    border-color: #f26522;
+}
+
+@media (max-width: 768px) {
+header {
+    height: 64px;
+    padding: 0 16px;
+}
+
+/* Botón Hamburguesa */
+.menu-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.menu-btn span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #a63b00;
+    border-radius: 2px;
+    transition: transform 0.25s, opacity 0.2s;
+}
+
+.marca span {
+    white-space: nowrap;
+}
+
+.hero {
+    margin: 16px;
+    padding: 64px 16px;
+}
+
+.boton, .boton-secundario {
+    display: block;
+    text-align: center;
+    margin-right: 0;
+    margin-bottom: 12px;
+}
+
+.categorias {
+    padding: 32px 16px;
+}
+
+.categorias-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+}
+
+.boton-whatsapp span {
+    display: none;
+}
+
+.boton-whatsapp {
+    width: 56px;
+    height: 56px;
+    padding: 0;
+    justify-content: center;
+}
+
+.boton-whatsapp img {
+    width: 30px;
+    height: 30px;
+}
