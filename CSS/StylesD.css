@@ -17,12 +17,6 @@
     border-radius: 50%;
 }
 
-#icono-WhatsApp{
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-}
-
 header {
     display: flex;
     justify-content: space-between;
@@ -42,6 +36,7 @@ header {
     flex-direction: row;
     list-style-type: none; /* Elimina los puntos de la lista */
     margin: 0; /* Elimina el margen por defecto */
+    padding: 0;
 }
 
 .navegador a {
@@ -58,6 +53,7 @@ header {
 
 body {
     font-family: 'Inter', sans-serif;
+    margin: 0;
 }
 
 .boton {
@@ -124,7 +120,7 @@ body {
 }
 
 .categorias {
-    padding: 48px 32px
+    padding: 48px 32px;
 }
 
 .categorias-grid {
@@ -146,6 +142,13 @@ body {
 
 .categoria:hover{
     border-color: #f26522;
+}
+
+/*--MENÚ HAMBURGUESA: oculto en escritorio--*/
+.menu-btn,
+.menu-velo,
+.menu-horarios {
+    display: none;
 }
 
 @media (max-width: 768px) {
@@ -179,6 +182,104 @@ header {
     transition: transform 0.25s, opacity 0.2s;
 }
 
+.menu-btn.abierto {
+    background: #fff1ea;
+}
+
+.menu-btn.abierto span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-btn.abierto span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-btn.abierto span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Tarjeta del menú */
+.navegador {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 16px;
+    width: 220px;
+    padding: 8px;
+    background: white;
+    border: 1px solid #e1bfb3;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+}
+
+.navegador.abierto {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+}
+
+.navegador ul {
+    flex-direction: column;
+    gap: 2px;
+}
+
+.navegador a {
+    display: block;
+    padding: 12px 14px;
+    margin-right: 0;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.navegador a:hover {
+    background: #fff1ea;
+    color: #a63b00;
+}
+
+.navegador a[aria-current="page"] {
+    background: #fff1ea;
+    color: #a63b00;
+    font-weight: 700;
+}
+
+/* Horarios */
+.menu-horarios {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin: 8px 6px 0;
+    padding: 12px 8px 6px;
+    border-top: 1px solid #f0e4df;
+    font-size: 12px;
+    color: #5b5f63;
+}
+
+.menu-horarios-titulo {
+    font-weight: 500;
+    color: #191c1d;
+}
+
+/* Velo gris */
+.menu-velo {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 9;
+    background: rgba(25, 28, 29, 0.08);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
+}
+
+.menu-velo.abierto {
+    opacity: 1;
+    visibility: visible;
+}
+
 .marca span {
     white-space: nowrap;
 }
@@ -202,7 +303,6 @@ header {
 .categorias-grid {
     grid-template-columns: repeat(2, 1fr);
 }
-}
 
 .boton-whatsapp span {
     display: none;
@@ -218,4 +318,5 @@ header {
 .boton-whatsapp img {
     width: 30px;
     height: 30px;
+}
 }
